@@ -1,0 +1,15 @@
+<div class="device-roller" id="device-{{ device.id }}">
+    <div class="device-roller-name-wrapper">
+        <h3 class="device-roller-name" id="device-{{ device.id }}-name">{{ device.name.length <= 20 ? device.name : device.name.substring(0, 20 - 3) + '...' }}</h5>
+        <img class="device-name-{{ device.type >= 0 ? 'ikea' : 'shelly' }}" src="../../../assets/{{ device.type >= 0 ? 'ikea' : 'shelly' }}-logo.png" alt="{{ device.type >= 0 ? 'IKEA' : 'SHELLY' }} DEVICE">
+    </div>
+    <div class="device-roller-controll-wrapper">
+        <button class="device-roller-controll close {{ device.state == 'closing' ? 'active' : 'inactive' }}" id="device-{{ device.id }}-controll-closing" value="{{ device.state == 'closing' }}" onclick="operateRoller('{{ device.id }}', { action: 'close' })">Close</button>
+        <button class="device-roller-controll stop {{ device.state == 'stopped'  || device.state == 'open' || device.state == 'closed' ? 'active' : 'inactive' }}" id="device-{{ device.id }}-controll-stopped" value="{{ device.state == 'stopped'  || device.state == 'open' || device.state == 'closed' }}" onclick="operateRoller('{{ device.id }}', { action: 'stop' })">Stop</button>
+        <button class="device-roller-controll open {{ device.state == 'opening' ? 'active' : 'inactive' }}" id="device-{{ device.id }}-controll-opening" value="{{ device.state == 'opening' }}" onclick="operateRoller('{{ device.id }}', { action: 'open' })">Open</button>
+    </div>
+    <div class="device-roller-position-wrapper">
+        <input class="device-roller-position" id="device-{{ device.id }}-position" type="range" oninput="document.getElementById('device-{{ device.id }}-position-label').innerHTML = value + '%'" onchange="operateRoller('{{ device.id }}', { action: 'position', position: document.getElementById('device-{{ device.id }}-position').value })" min="0" max="100" value="{{ device.current_pos }}" {{ device.state == 'stopped' || device.state == 'open' || device.state == 'closed' ? '' : 'disabled' }}>
+        <label class="device-roller-position-label{{ device.state == 'stopped' || device.state == 'open' || device.state == 'closed' ? '' : ' disabled' }}" id="device-{{ device.id }}-position-label" for="device-{{ device.id }}-position">{{ device.state != 'stopped' && device.state != 'open' && device.state != 'closed' ? '...' : device.current_pos }}%</label>
+    </div>
+</div>

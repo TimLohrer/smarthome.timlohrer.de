@@ -1,0 +1,741 @@
+body {
+    background-color: var(--dark);
+    color: white;
+    display: grid;
+    align-items: center;
+    place-items: center;
+    scroll-behavior: smooth;
+    cursor: default;
+}
+
+/* group */
+
+.group {
+    width: 300px;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 7.5px;
+    background-color: var(--grey);
+}
+
+.group-info-wrapper {
+    margin-right: auto;
+    align-items: center;
+}
+
+.group-name-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.group-name {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.group-name-edit {
+    height: 13.5px;
+    width: 13.5px;
+    margin-left: 10px;
+    cursor: pointer; 
+}
+
+.group-onOff {
+    width: max-content;
+    font-size: 14.5;
+    font-weight: 500;
+    height: 35px;
+    border: solid 1px transparent;
+    padding: 5px 7.5px 5px 7.5px;
+    margin: 15px 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .25s;
+}
+
+.group-onOff.on:hover {
+    color: var(--red);
+    border: solid 1px var(--red);
+    background-color: transparent;
+}
+
+.group-onOff.off:hover {
+    color: var(--green);
+    border: solid 1px var(--green);
+    background-color: var(--grey);
+}
+
+.group-onOff.on {
+    color: var(--grey);
+    background-color: var(--red);
+}
+
+.group-onOff.off {
+    color: var(--grey);
+    background-color: var(--green);
+}
+
+.group-open {
+    height: 35px;
+    width: 35px;
+    fill: white;
+    margin-left: auto;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.group-open-hidden {
+    height: 0px;
+    width: 0px;
+}
+
+/* group-title */
+
+.group-title-name-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.group-title {
+    margin-top: 25px;
+}
+
+.group-title-name {
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.group-title-close {
+    height: 25px;
+    width: 25px;
+    margin-right: 10px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/* device-* */
+
+.device-name-ikea {
+    height: 12.5px;
+    width: 35px;
+    border-radius: 2.5px;
+    margin-left: auto;
+}
+
+.device-name-shelly {
+    height: 15px;
+    width: 32.5px;
+    align-self: auto;
+    border-radius: 7.5px;
+    margin-left: auto;
+}
+
+/* device-light */
+
+.device-light {
+    background-color: var(--grey);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 7.5px;
+    width: 250px;
+}
+
+.device-light-name-wrapper {
+    display: flex;
+    place-items: center;
+}
+
+.device-light-name {
+    font-size: 17.5px;
+    font-weight: 500;
+}
+
+.device-light-name-edit {
+    height: 12.5px;
+    width: 12.5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.device-light-alive {
+    font-size: 13.5px;
+    font-weight: 400;
+}
+
+.device-light-alive.active {
+    color: var(--green);
+}
+
+.device-light-alive.inactive {
+    color: var(--red);
+}
+
+.device-light-onOff {
+    width: max-content;
+    font-size: 14.5;
+    font-weight: 500;
+    height: 35px;
+    border: solid 1px transparent;
+    padding: 5px 7.5px 5px 7.5px;
+    margin: 15px 0 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .25s;
+}
+
+.device-light-onOff.on:hover {
+    color: var(--red);
+    border: solid 1px var(--red);
+    background-color: transparent;
+}
+
+.device-light-onOff.off:hover {
+    color: var(--green);
+    border: solid 1px var(--green);
+    background-color: transparent;
+}
+
+.device-light-onOff:disabled {
+    opacity: 0.5;
+    cursor: initial;
+}
+
+.device-light-onOff:disabled:hover {
+    color: var(--grey);
+}
+
+.device-light-onOff.on:disabled:hover {
+    background-color: var(--red);
+}
+
+.device-light-onOff.off:disabled:hover {
+    background-color: var(--green);
+}
+
+.device-light-onOff.on {
+    color: var(--grey);
+    background-color: var(--red);
+}
+
+.device-light-onOff.off {
+    color: var(--grey);
+    background-color: var(--green);
+}
+
+.device-light-dimmer-wrapper {
+    margin: 15px 0 15px;
+    place-items: center;
+    display: flex;
+}
+
+.device-light-dimmer {
+    -webkit-appearance: none;
+    width: 150px;
+    height: 6.5px;
+    border-radius: 5px;  
+    background: var(--dark);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.device-light-dimmer:disabled {
+    opacity: 0.65;
+    cursor: initial;
+}
+
+.device-light-dimmer::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17.5px;
+    height: 17.5px;
+    border: none;
+    border-radius: 50%; 
+    background: var(--blurple);
+    cursor: pointer;
+}
+
+.device-light-dimmer:disabled::-webkit-slider-thumb {
+    opacity: 0.8;
+    cursor: initial;
+}
+
+.device-light-dimmer::-moz-range-thumb {
+    width: 17.5px;
+    height: 17.5px;
+    border: none;
+    border-radius: 50%;
+    background: var(--blurple);
+    cursor: pointer;
+}
+
+.device-light-dimmer:disabled::-moz-range-thumb {
+    opacity: 0.8;
+    cursor: initial;
+}
+
+.device-light-dimmer-label {
+    margin-left: 12.5px;
+}
+
+.device-light-dimmer-label.disabled {
+    opacity: 0.65;
+}
+
+.device-light-color-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.device-light-color-wrapper.disabled {
+    opacity: 0.65;
+}
+
+.device-light-color {
+    width: max-content;
+    font-size: 12.5;
+    font-weight: 500;
+    height: 30px;
+    background-color: transparent;
+    border: solid 1px;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-size: 200% auto;
+    flex: 1 1 auto;
+    transition-duration: .5s;
+}
+
+.device-light-color.normal {
+    margin: 10px 10px 0 10px;
+}
+
+.device-light-color.active {
+    background-position: right center;
+    color: var(--grey);
+    transition-duration: .5s;
+    cursor: initial;
+}
+
+.device-light-color.active.cold {
+    background-image: linear-gradient(to right, #c4eaff 0%, #8fd3f4 51%, #fcfcfc 100%);
+}
+
+.device-light-color.active.normal {
+    background-image: linear-gradient(to right, #ddc490 0%, #eef2c1 51%, #f5fbc2 100%);
+}
+
+.device-light-color.active.warm {
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
+
+.device-light-color.inactive.cold {
+    color: #8fd3f4;
+    border-color: #c4eaff;
+}
+
+.device-light-color.inactive.normal {
+    color: #ddc490;
+    border-color: #eef2c1;
+}
+
+.device-light-color.inactive.warm {
+    color: #f6d365;
+    border-color: #fda085;
+}
+
+.device-light-color.inactive:hover {
+    border-color: transparent;
+    background-position: right center;
+    transition-duration: .5s;
+}
+
+.device-light-color.inactive.cold:hover {
+    color: var(--grey);
+    background-image: linear-gradient(to right, #c4eaff 0%, #8fd3f4 51%, #fcfcfc 100%);
+}
+
+.device-light-color.inactive.normal:hover {
+    color: var(--grey);
+    background-image: linear-gradient(to right, #ddc490 0%, #eef2c1 51%, #f5fbc2 100%);
+}
+
+.device-light-color.inactive.warm:hover {
+    color: var(--grey);
+    background-image: linear-gradient(to right, #f6d365 0%, #fda085 51%, #f6d365 100%);
+}
+
+.device-light-color.inactive:disabled:hover {
+    background-color: transparent;
+    background-image: none;
+    cursor: initial;
+}
+
+.device-light-color.active:disabled:hover {
+    color: var(--grey);
+}
+
+.device-light-color.inactive.cold:disabled:hover {
+    color: #8fd3f4;
+    border-color: #c4eaff;
+}
+
+.device-light-color.inactive.normal:disabled:hover {
+    color: #ddc490;
+    border-color: #eef2c1;
+}
+
+.device-light-color.inactive.warm:disabled:hover {
+    color: #f6d365;
+    border-color: #fda085;
+}
+
+/* device-remote */
+
+.device-remote {
+    background-color: var(--grey);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 7.5px;
+    width: 250px;
+}
+
+.device-remote-name-wrapper {
+    display: flex;
+    place-items: center;
+}
+
+.device-remote-name {
+    font-size: 17.5px;
+    font-weight: 500;
+}
+
+.device-remote-name-edit {
+    height: 12.5px;
+    width: 12.5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.device-remote-alive {
+    font-size: 13.5px;
+    font-weight: 400;
+}
+
+.device-remote-alive.active {
+    color: var(--green);
+}
+
+.device-remote-alive.inactive {
+    color: var(--red);
+}
+
+/* device-1-Switch */
+
+.device-1-switch {
+    background-color: var(--grey);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 7.5px;
+    width: 250px;
+}
+
+.device-1-switch-name-wrapper {
+    display: flex;
+    place-items: center;
+}
+
+.device-1-switch-name {
+    font-size: 17.5px;
+    font-weight: 500;
+}
+
+.device-1-switch-relay {
+    width: max-content;
+    font-size: 14.5;
+    font-weight: 500;
+    height: 35px;
+    border: solid 1px transparent;
+    padding: 5px 7.5px 5px 7.5px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .25s;
+}
+
+.device-1-switch-relay.on:hover {
+    color: var(--red);
+    border: solid 1px var(--red);
+    background-color: transparent;
+}
+
+.device-1-switch-relay.off:hover {
+    color: var(--green);
+    border: solid 1px var(--green);
+    background-color: transparent;
+}
+
+.device-1-switch-relay:disabled {
+    opacity: 0.5;
+    cursor: initial;
+}
+
+.device-1-switch-relay:disabled:hover {
+    color: var(--grey);
+}
+
+.device-1-switch-relay.on:disabled:hover {
+    background-color: var(--red);
+}
+
+.device-1-switch-relay.off:disabled:hover {
+    background-color: var(--green);
+}
+
+.device-1-switch-relay.on {
+    color: var(--grey);
+    background-color: var(--red);
+}
+
+.device-1-switch-relay.off {
+    color: var(--grey);
+    background-color: var(--green);
+}
+
+/* device-roller */
+
+.device-roller {
+    background-color: var(--grey);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 7.5px;
+    width: 250px;
+}
+
+.device-roller-name-wrapper {
+    display: flex;
+    place-items: center;
+}
+
+.device-roller-name {
+    font-size: 17.5px;
+    font-weight: 500;
+}
+
+.device-roller-name-edit {
+    height: 12.5px;
+    width: 12.5px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.device-roller-controll-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.device-roller-controll-wrapper.disabled {
+    opacity: 0.65;
+}
+
+.device-roller-controll {
+    width: max-content;
+    font-size: 12.5;
+    font-weight: 500;
+    height: 30px;
+    background-color: transparent;
+    border: solid 1px;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-size: 200% auto;
+    flex: 1 1 auto;
+    transition-duration: .5s;
+}
+
+.device-roller-controll.stop {
+    margin: 15px 10px 0 10px;
+}
+
+.device-roller-controll.active {
+    color: var(--grey);
+    background-color: var(--blurple);
+    transition-duration: .5s;
+    cursor: initial;
+}
+
+.device-roller-controll.inactive {
+    border-color: var(--blurple);
+    background-color: transparent;
+    color: var(--blurple);
+}
+
+.device-roller-controll.inactive:hover {
+    color: var(--grey);
+    background-color: var(--blurple);
+    transition-duration: .5s;
+    cursor: pointer;
+}
+
+.device-roller-position-wrapper {
+    margin-top: 15px;
+    place-items: center;
+    display: flex;
+}
+
+.device-roller-position {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 6.5px;
+    border-radius: 5px;  
+    background: var(--dark);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    cursor: pointer;
+}
+
+.device-roller-position:disabled {
+    opacity: 0.65;
+    cursor: initial;
+}
+
+.device-roller-position::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 17.5px;
+    height: 17.5px;
+    border: none;
+    border-radius: 50%; 
+    background: var(--blurple);
+    cursor: pointer;
+}
+
+.device-roller-position:disabled::-webkit-slider-thumb {
+    opacity: 0.8;
+    cursor: initial;
+}
+
+.device-roller-position::-moz-range-thumb {
+    width: 17.5px;
+    height: 17.5px;
+    border: none;
+    border-radius: 50%;
+    background: var(--blurple);
+    cursor: pointer;
+}
+
+.device-roller-position:disabled::-moz-range-thumb {
+    opacity: 0.8;
+    cursor: initial;
+}
+
+.device-roller-position-label {
+    margin-left: 12.5px;
+}
+
+.device-roller-position-label.disabled {
+    opacity: 0.65;
+}
+
+/* device-1-Switch */
+
+.device-2-switch {
+    background-color: var(--grey);
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 7.5px;
+    width: 250px;
+}
+
+.device-2-switch-name-wrapper {
+    display: flex;
+    place-items: center;
+}
+
+.device-2-switch-name {
+    font-size: 17.5px;
+    font-weight: 500;
+}
+
+.device-2-switch-relay-name-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12.5px;
+}
+
+.device-2-switch-relay-name {
+    font-size: 15px;
+    color: white;
+}
+
+.device-2-switch-relay-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.device-2-switch-relay {
+    width: 110px;
+    font-size: 14.5;
+    font-weight: 500;
+    margin-top: 7.5px;
+    height: 35px;
+    border: solid 1px transparent;
+    padding: 5px 7.5px 5px 7.5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition-duration: .25s;
+}
+
+.device-2-switch-relay.on:hover {
+    color: var(--red);
+    border: solid 1px var(--red);
+    background-color: transparent;
+}
+
+.device-2-switch-relay.off:hover {
+    color: var(--green);
+    border: solid 1px var(--green);
+    background-color: transparent;
+}
+
+.device-2-switch-relay:disabled {
+    opacity: 0.5;
+    cursor: initial;
+}
+
+.device-2-switch-relay:disabled:hover {
+    color: var(--grey);
+}
+
+.device-2-switch-relay.on:disabled:hover {
+    background-color: var(--red);
+}
+
+.device-2-switch-relay.off:disabled:hover {
+    background-color: var(--green);
+}
+
+.device-2-switch-relay.on {
+    color: var(--grey);
+    background-color: var(--red);
+}
+
+.device-2-switch-relay.off {
+    color: var(--grey);
+    background-color: var(--green);
+}

@@ -1,0 +1,7 @@
+<div class="device-1-switch" id="device-{{ device.id }}">
+    <div class="device-1-switch-name-wrapper">
+        <h3 class="device-1-switch-name" id="device-{{ device.id }}-name">{{ device.name.length <= 20 ? device.name : device.name.substring(0, 20 - 3) + '...' }}</h5>
+        <img class="device-name-{{ device.type >= 0 ? 'ikea' : 'shelly' }}" src="../../../assets/{{ device.type >= 0 ? 'ikea' : 'shelly' }}-logo.png" alt="{{ device.type >= 0 ? 'IKEA' : 'SHELLY' }} DEVICE">
+    </div>
+    <button class="device-1-switch-relay {{ device.relayValue ? 'on' : 'off' }}" id="device-{{ device.id }}-relay" value="{{ device.relayValue }}" onclick="operate1('{{ device.id }}', { value: document.getElementById('device-{{ device.id }}-relay').value == 'true' ? false : true })">{{ device.relayValue ? 'Turn Off' : 'Turn On' }}</button>
+</div>

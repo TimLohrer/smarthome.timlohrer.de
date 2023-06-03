@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text&family=JetBrains+Mono&family=Roboto&display=swap');
+
+* {
+    font-family: 'Golos Text', sans-serif;
+    margin: 0px;
+    padding: 0px;
+}

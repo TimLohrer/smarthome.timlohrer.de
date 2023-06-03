@@ -1,0 +1,7 @@
+<div class="group-title" id="group-title-{{ group.instanceId }}">
+    <div class="group-title-name-wrapper">
+        <h2 class="group-title-name" id="group-title-{{ group.instanceId }}-name">{{ group.name.length <= 20 ? group.name : group.name.substring(0, 20 - 3) + '...' }}</h2>
+        <img class="group-title-close" src="../../../assets/close-circle.png" alt="Close Group" onclick="closeGroup()" id="group-title-{{ group.instanceId }}-close">
+    </div>
+    {{ devices.join('') }}
+</div>

@@ -1,0 +1,14 @@
+<div class="device-2-switch" id="device-{{ device.id }}">
+    <div class="device-2-switch-name-wrapper">
+        <h3 class="device-2-switch-name" id="device-{{ device.id }}-name">{{ device.name.length <= 20 ? device.name : device.name.substring(0, 20 - 3) + '...' }}</h5>
+        <img class="device-name-{{ device.type >= 0 ? 'ikea' : 'shelly' }}" src="../../../assets/{{ device.type >= 0 ? 'ikea' : 'shelly' }}-logo.png" alt="{{ device.type >= 0 ? 'IKEA' : 'SHELLY' }} DEVICE">
+    </div>
+    <div class="device-2-switch-relay-name-wrapper">
+        <p class="device-2-switch-relay-name">{{ device.switch0.name }}</p>
+        <p class="device-2-switch-relay-name">{{ device.switch1.name }}</p>
+    </div>
+    <div class="device-2-switch-relay-wrapper">
+        <button class="device-2-switch-relay {{ device.relay0Value ? 'on' : 'off' }}" id="device-{{ device.id }}-relay0" value="{{ device.relay0Value }}" onclick="operate2Switch('{{ device.id }}', { relay: 'switch0', value: document.getElementById('device-{{ device.id }}-relay0').value == 'true' ? false : true })">{{ device.relay0Value ? 'Turn Off' : 'Turn On' }}</button>
+        <button class="device-2-switch-relay {{ device.relay1Value ? 'on' : 'off' }}" id="device-{{ device.id }}-relay1" value="{{ device.relay1Value }}" onclick="operate2Switch('{{ device.id }}', { relay: 'switch1', value: document.getElementById('device-{{ device.id }}-relay1').value == 'true' ? false : true })">{{ device.relay1Value ? 'Turn Off' : 'Turn On' }}</button>
+    </div>
+</div>

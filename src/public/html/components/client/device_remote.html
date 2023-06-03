@@ -1,0 +1,8 @@
+<div class="device-remote" id="device-{{ device.instanceId }}">
+    <div class="device-remote-name-wrapper">
+        <h3 class="device-remote-name" id="device-{{ device.instanceId }}-name">{{ device.name.length == 0 ? device.deviceInfo.modelNumber.length > 0 ? device.deviceInfo.modelNumber : 'Unknown Remote' : device.name.length <= 20 ? device.name : device.name.substring(0, 20 - 3) + '...' }}</h5>
+        <img class="device-remote-name-edit" onclick="updateRemote('{{ device.instanceId }}')" src="../../../assets/edit.png" alt="EDIT" {{ user.editingMode ? '' : 'hidden' }}>
+        <img class="device-name-{{ device.type >= 0 ? 'ikea' : 'shelly' }}" src="../../../assets/{{ device.type >= 0 ? 'ikea' : 'shelly' }}-logo.png" alt="{{ device.type >= 0 ? 'IKEA' : 'SHELLY' }} DEVICE">
+    </div>
+    <h5 class="device-remote-alive {{ device.alive ? 'active' : 'inactive' }}" id="device-{{ device.instanceId }}-alive">{{ device.alive ? 'Active' : 'Inactive' }}</h6>
+</div>

@@ -1,0 +1,46 @@
+{
+    "url": "https://smarthome.timlohrer.de",
+    "api": "https://api.smarthome.timlohrer.de/api",
+    "ports": {
+        "API": "3000",
+        "APP": "3001"
+    },
+    "shellyGroups": [
+        {
+            "name": "Eingang",
+            "instanceId": "098475",
+            "toggleDevices": ["80646fe4b738"],
+            "devices": ["80646fe4b738"]
+        },
+        {
+            "name": "Bad",
+            "instanceId": "876245",
+            "toggleDevices": ["4022d8dbdd18"],
+            "devices": ["4022d8dbdd18", "5443b23c73dc"]
+        },
+        {
+            "name": "Wohnzimmer",
+            "instanceId": "023584",
+            "toggleDevices": ["b8d61a86377c"],
+            "devices": ["b8d61a86377c", "5443b23b3ad4", "b8d61a8b7878", "5443b23dce24"]
+        },
+        {
+            "name": "Küche",
+            "instanceId": "135833",
+            "toggleDevices": ["4855199bfc2c"],
+            "devices": ["4855199bfc2c", "5443b23ae568"]
+        },
+        {
+            "name": "Heike",
+            "instanceId": "092385",
+            "toggleDevices": ["80646fc83a40"],
+            "devices": ["80646fc83a40", "c049ef8e4960", "c049ef85ee74"]
+        },
+        {
+            "name": "Tim",
+            "instanceId": "131074",
+            "toggleDevices": ["80646fe590f8"],
+            "devices": ["80646fe590f8", "5443b23f6284", "b8d61a8ac5b0", "5443b23d632c"]
+        }
+    ]
+}

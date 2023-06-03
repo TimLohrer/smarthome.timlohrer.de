@@ -1,0 +1,18 @@
+<div class="device-light" id="device-{{ device.instanceId }}">
+    <div class="device-light-name-wrapper">
+        <h3 class="device-light-name" id="device-{{ device.instanceId }}-name">{{ device.name.length == 0 ? device.deviceInfo.modelNumber.length > 0 ? device.deviceInfo.modelNumber : 'Unknown Remote' : device.name.length <= 20 ? device.name : device.name.substring(0, 20 - 3) + '...' }}</h5>
+        <img class="device-light-name-edit" onclick="updateLight('{{ device.instanceId }}')" src="../../../assets/edit.png" alt="EDIT" {{ user.editingMode ? '' : 'hidden' }}>
+        <img class="device-name-{{ device.type >= 0 ? 'ikea' : 'shelly' }}" src="../../../assets/{{ device.type >= 0 ? 'ikea' : 'shelly' }}-logo.png" alt="{{ device.type >= 0 ? 'IKEA' : 'SHELLY' }} DEVICE">
+    </div>
+    <h5 class="device-light-alive {{ device.alive ? 'active' : 'inactive' }}" id="device-{{ device.instanceId }}-alive">{{ device.alive ? 'Active' : 'Inactive' }}</h6>
+    <button class="device-light-onOff {{ device.alive && device.lightList[0].onOff ? 'on' : 'off' }}" id="device-{{ device.instanceId }}-onOff" value="{{ device.alive && device.lightList[0].onOff }}" onclick="operateLight('{{ device.instanceId }}', { onOff: document.getElementById('device-{{ device.instanceId }}-onOff').getAttribute('value') == 'true' ? false : true })" {{ device.alive ? '' : 'disabled' }}>{{ device.alive && device.lightList[0].onOff ? 'Turn Off' : 'Turn On' }}</button>
+    <div class="device-light-dimmer-wrapper">
+        <input class="device-light-dimmer" id="device-{{ device.instanceId }}-dimmer" type="range" oninput="document.getElementById('device-{{ device.instanceId }}-dimmer-label').innerHTML = value + '%'" onchange="operateLight('{{ device.instanceId }}', { onOff: true, dimmer: value })" min="0" max="100" value="{{ device.lightList[0].dimmer }}" {{ device.alive && device.lightList[0].onOff ? '' : 'disabled' }}>
+        <label class="device-light-dimmer-label{{ device.alive && device.lightList[0].onOff ? '' : ' disabled' }}" id="device-{{ device.instanceId }}-dimmer-label" for="device-{{ device.instanceId }}-dimmer">{{ device.lightList[0].dimmer }}%</label>
+    </div>
+    <div class="device-light-color-wrapper{{ device.alive && device.lightList[0].onOff ? '' : ' disabled' }}" id="device-{{ device.instanceId }}-color-wrapper">
+        <button class="device-light-color cold {{ device.lightList[0].colorTemperature == 0 ? 'active' : 'inactive' }}" id="device-{{ device.instanceId }}-color-cold" onclick="operateLight('{{ device.instanceId }}', { onOff: true, color: 'cold' })" {{ device.alive && device.lightList[0].onOff ? '' : 'disabled' }}>Cold</button>
+        <button class="device-light-color normal {{ device.lightList[0].colorTemperature == 40.2 ? 'active' : 'inactive' }}" id="device-{{ device.instanceId }}-color-normal" onclick="operateLight('{{ device.instanceId }}', { onOff: true, color: 'normal' })" {{ device.alive && device.lightList[0].onOff ? '' : 'disabled' }}>Normal</button>
+        <button class="device-light-color warm {{ device.lightList[0].colorTemperature == 100 ? 'active' : 'inactive' }}" id="device-{{ device.instanceId }}-color-warm" onclick="operateLight('{{ device.instanceId }}', { onOff: true, color: 'warm' })" {{ device.alive && device.lightList[0].onOff ? '' : 'disabled' }}>Warm</button>
+    </div>
+</div>
