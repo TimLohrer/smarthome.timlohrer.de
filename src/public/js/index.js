@@ -411,7 +411,7 @@ async function closeGroup() {
 
 // operate group
 async function operateGroup(instanceId, operation) {
-    if (!(await checkForPermissions(['34068695-26af-4344-b041-285370c65a89', '2587fc3d-7581-461b-8452-ed689e9c198e', '00000000-0000-0000-0000-000000000000']))) {
+    if (!(await checkForPermissions(['34068695-26af-4344-b041-285370c65a89', '00000000-0000-0000-0000-000000000000']))) {
         return;
     }
     DATA.groups[instanceId].toggleDevices.forEach(async d => {
@@ -493,7 +493,7 @@ async function updateLight(instanceId) {
 
 // operate light
 async function operateLight(instanceId, operation) {
-    if (!(await checkForPermissions(['34068695-26af-4344-b041-285370c65a89', '2587fc3d-7581-461b-8452-ed689e9c198e', '00000000-0000-0000-0000-000000000000']))) {
+    if (!(await checkForPermissions(['34068695-26af-4344-b041-285370c65a89', '00000000-0000-0000-0000-000000000000']))) {
         return;
     }
     const res = await fetch(`{{api}}/devices/lights/${instanceId}/operate`, {
@@ -510,7 +510,7 @@ async function operateLight(instanceId, operation) {
 
 // operate roller
 async function operateRoller(id, operation) {
-    if (!(await checkForPermissions(['34068695-26af-4344-b041-285370c65a89', '2587fc3d-7581-461b-8452-ed689e9c198e', '00000000-0000-0000-0000-000000000000']))) {
+    if (!(await checkForPermissions(['34068695-26af-4344-b041-285370c65a89', '00000000-0000-0000-0000-000000000000']))) {
         return;
     }
     if (operation.position) {
@@ -531,7 +531,7 @@ async function operateRoller(id, operation) {
 
 // operate 2 switch
 async function operate2Switch(id, operation) {
-    if (!(await checkForPermissions(['34068695-26af-4344-b041-285370c65a89', '2587fc3d-7581-461b-8452-ed689e9c198e', '00000000-0000-0000-0000-000000000000']))) {
+    if (!(await checkForPermissions(['34068695-26af-4344-b041-285370c65a89', '00000000-0000-0000-0000-000000000000']))) {
         return;
     }
     console.log(operation);
@@ -549,7 +549,7 @@ async function operate2Switch(id, operation) {
 
 // operate 1
 async function operate1(id, operation) {
-    if (!(await checkForPermissions(['34068695-26af-4344-b041-285370c65a89', '2587fc3d-7581-461b-8452-ed689e9c198e', '00000000-0000-0000-0000-000000000000']))) {
+    if (!(await checkForPermissions(['34068695-26af-4344-b041-285370c65a89', '00000000-0000-0000-0000-000000000000']))) {
         return;
     }
     const res = await fetch(`{{api}}/devices/shellies/1/${id}/operate`, {
